@@ -1,0 +1,1 @@
+ Get-AzSubscription | % {  Set-AzContext -Subscription $_.Id  ; Write-Host "Connected to the Subscription : " $_.Name -ForegroundColor Yellow ;.\azurebackupreport.ps1 | Export-Csv -Path $($_.Name.TrimEnd()+ ".csv") } 
